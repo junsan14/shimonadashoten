@@ -73,7 +73,7 @@ export default function ContactForm() {
     <>
         <form onSubmit={submit} className="form_control" id="form">
             <div className="form_control_item">
-                <label htmlFor="email">名前</label>
+                <label htmlFor="email">{__(':contact_name')}</label>
                 <TextInput
                         id="user_name"
                         type="text"
@@ -86,7 +86,7 @@ export default function ContactForm() {
                     />
             </div>
             <div className="form_control_item">
-                <label htmlFor="email">アドレス</label>
+                <label htmlFor="email">{__(':contact_address')}</label>
                 <TextInput
                         id="user_email"
                         type="email"
@@ -100,7 +100,7 @@ export default function ContactForm() {
             </div>
 
             <div className="form_control_item">
-                <label htmlFor="subject">件名</label>
+                <label htmlFor="subject">{__(':contact_subject')}</label>
                 <TextInput
                         id="subject"
                         type="text"
@@ -115,7 +115,7 @@ export default function ContactForm() {
             </div>
             
             <div className="form_control_item">
-                <label htmlFor="content">内容</label>
+                <label htmlFor="content">{__(':contact_content')}</label>
                 <textarea id="content" className="form_control_item_input" rows="10" name="content"
                         required
                         onChange={handleChange}

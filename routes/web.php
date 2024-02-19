@@ -18,7 +18,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {return Inertia::render('Home');})->name('home');
+Route::get('/', function () {
+    //dd(App::getLocale());
+    return Inertia::render('Home',['userLocale'=>App::getLocale()]);
+})->name('home');
 Route::post('/', [MailController::class, 'send'])->name('contact.send');
 
 

@@ -59,8 +59,8 @@ function countUpNumber(){
     let speed = 25;
     let waittime = 1500;
     let intervalId;
-    //waittime =0;
-    //speed=5;
+    waittime =0;
+    speed=5;
     function startInterval(){
       intervalId = setInterval(function(){
         if(start >= goal+1){

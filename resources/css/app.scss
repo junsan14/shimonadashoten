@@ -579,7 +579,7 @@ img{
         @include mq(sp){
             font-size: 2em;
         }
-        &_jp{
+        &_sub{
             font-size: 1.4em;
             text-align: center;
             letter-spacing: .4em;
@@ -588,18 +588,22 @@ img{
             
         }
     }
-   
+    .en{
+        letter-spacing: 0;
+    }
     &_content_title{
         text-align: center;
         font-size: 1.1vw;
         letter-spacing: .3em;
         line-height: 3vw;
         margin: 40px 0;
+        white-space: pre-wrap;
+        
         @include mq(tab){
             font-size: 1.5vw;
         }
         @include mq(sp){
-            font-size: .8rem;
+            font-size: 3.0vw;
             margin-top: 40px;
             margin-bottom: 20px;
             line-height: 6vw;

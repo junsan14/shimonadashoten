@@ -13,9 +13,6 @@ import kanpei from '../../images/goods/drink_kanpei.webp';
 
 
 
-
-
-
 import totobag from '../../images/goods/totobag.webp';
 import plate from '../../images/goods/plate.webp';
 import clearfile from '../../images/goods/clearfile.webp';
@@ -50,14 +47,16 @@ function GoodsDrink(){
                 modules={[EffectCards,Autoplay]}
             >
                 <SwiperSlide>
-                    <div className='section_content_swiper_item js-show-modal js-modal-goods-drink' key='1' data-index='1'>
-                        <img src={iyokan} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='1' />
+                    <div className='section_content_swiper_item js-show-modal js-modal-goods-drink' key='0' data-index='0'>
+                        <img src={iyokan} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='0' />
                     </div>
-                    <figcaption className="post_desc_caption" >双海の伊予柑ジュース（小瓶）</figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        双海の伊予柑ジュース（小瓶）
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='section_content_swiper_item js-show-modal js-modal-goods-drink' key='0' data-index='0'>
-                        <img src={beni} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='0' />
+                    <div className='section_content_swiper_item js-show-modal js-modal-goods-drink' key='1' data-index='1'>
+                        <img src={beni} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='1' />
                     </div>
                     <figcaption className="post_desc_caption" >
                         双海のマドンナジュース（小瓶）
@@ -67,7 +66,9 @@ function GoodsDrink(){
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-drink' key='2' data-index='2'>
                         <img src={kanpei} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='2' />
                     </div>
-                    <figcaption className="post_desc_caption" >双海の甘平ジュース（小瓶）</figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        双海の甘平ジュース（小瓶）
+                    </figcaption>  
                 </SwiperSlide>
             </Swiper>
         </>

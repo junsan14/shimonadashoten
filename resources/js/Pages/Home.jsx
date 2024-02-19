@@ -17,11 +17,36 @@ import og from '../../images/og.webp';
 
 
 
-export default function Home(){
+export default function Home(props){
     spMenuShow();
     countUpNumber();
     onScrollOverray();
     imgClick();
+
+    const locales = ['ja', 'en', 'zh'];
+    const handleChangeLocale = locale => {
+
+        location.href = '?locale='+ locale;
+
+    };
+    let userLocale = props.userLocale;
+    console.log(props)
+    const Test = ()=>{
+        return(
+            <div className="p-5">
+
+
+            Language<br />
+            <select onChange={e => handleChangeLocale(e.target.value)}>
+                <option value=""></option>
+                {locales.map(locale => (
+                    <option key={locale} value={locale}>{locale}</option>
+                ))}
+            </select>
+        </div>
+        )
+    }
+
     return(
         <>
             <ShowModal />
@@ -80,23 +105,19 @@ export default function Home(){
                 </section>
                 <section className="section overview wrap" id='overview'>
                     <h2 className='section_title'>OVERVIEW</h2>
-                    <h2 className='section_title_jp'>下灘商店とは</h2>
+                    <h2 className={`section_title_sub ${userLocale}`}>{__(':overview_title')}</h2>
                     <div className='section_content_twoCol'>
                         <div className='section_content_twoCol_first'>
-                            <h3 className='section_content_title'>
-                                海に最も近い駅の1つとして有名な<br />
-                                愛媛県伊予市に位置する下灘駅に<br />
-                                小売店が24年2月10日OPEN
-                                </h3>
+                            <h3 className={`section_content_title ${userLocale}`}>
+                                {__(':overview_desc1')}
+                            </h3>
                             <div className='section_content_swiper cube'>
                                 <Overview1st />
                             </div>
                         </div>
                         <div className='section_content_twoCol_first'>
-                            <h3 className='section_content_title'>
-                                長年未使用だった駅室の一角で<br />
-                                伊予市ならではのお土産や<br />
-                                JR商品を販売
+                            <h3 className={`section_content_title ${userLocale}`}>
+                                {__(':overview_desc2')}
                             </h3>
                             <div className='section_content_swiper cube'>
                                 <Overview2nd />
@@ -106,17 +127,17 @@ export default function Home(){
                 </section>
                 <section className="section details wrap" id='goods'>
                     <h2 className='section_title'>GOODS</h2>
-                    <h2 className='section_title_jp'>商品</h2>
+                    <h2 className={`section_title_sub ${userLocale}`}>{__(':goods_title')}</h2>
                     <div className='section_content_twoCol'>
                         <div className='section_content_twoCol_first'>
                             <div className='section_content_swiper card drink '>
-                                <h3 className='section_content_title'>ご当地 Drink</h3>
+                                <h3 className={`section_content_title ${userLocale}`}>{__(':goods_1')}</h3>
                                 <GoodsDrink /> 
                             </div>
                         </div>
                         <div className='section_content_twoCol_first'>
                             <div className='section_content_swiper card '>
-                            <h3 className='section_content_title'>JR四国商品 下灘駅 </h3>
+                            <h3 className={`section_content_title ${userLocale}`}>{__(':goods_2')} </h3>
                                 <GoodsShimonadaJR /> 
                             </div>
                         </div>
@@ -125,13 +146,13 @@ export default function Home(){
                     <div className='section_content_twoCol'>
                         <div className='section_content_twoCol_first'>
                             <div className='section_content_swiper card '>
-                            <h3 className='section_content_title'>JR四国商品 </h3>
+                            <h3 className={`section_content_title ${userLocale}`}>{__(':goods_3')} </h3>
                                 <GoodsShikokuJR /> 
                             </div>
                         </div>
                         <div className='section_content_twoCol_first'>
                             <div className='section_content_swiper card '>
-                            <h3 className='section_content_title'>JR四国7周年キャンペーン商品</h3>
+                            <h3 className={`section_content_title ${userLocale}`}>{__(':goods_4')}</h3>
                                 <GoodsShikokuJRCampaign /> 
                             </div>
                         </div>
@@ -139,19 +160,19 @@ export default function Home(){
                 </section>
                 <section className="section details wrap" id='shopinfo'>
                     <h2 className='section_title'>SHOP INFO</h2>
-                    <h2 className='section_title_jp'>ショップ情報</h2>
+                    <h2 className={`section_title_sub ${userLocale}`}>{__(':info_title')}</h2>
                     <div className='section_content_oneCol'>
                         <div className='section_content_twoCol'>
                             <div className='section_content_twoCol_first text'>
                                 <dl>
-                                    <dt>住所</dt>
-                                    <dd>愛媛県伊予市双海町大久保</dd>
-                                    <dt>営業時間</dt>
-                                    <dd>土日祝日PM12:00-日没(基本)</dd>
-                                    <dt>駐車場</dt>
-                                    <dd>駅前約5台/ <a href='https://www.city.iyo.lg.jp/keizaikoyou/kanko/documents/rinji_chushajo.pdf' rel="noopener noreferrer" target='_blank' className='link'>第2駐車場約20台(徒歩5分)</a></dd>
-                                    <dt>お問い合わせ</dt>
-                                    <dd><a href="tel:090-5829-3111">090-5829-3111</a></dd>
+                                    <dt>{__(':info_title_address')}</dt>
+                                    <dd>{__(':info_address')}</dd>
+                                    <dt>{__(':info_title_time')}</dt>
+                                    <dd>{__(':info_time')}</dd>
+                                    <dt>{__(':info_title_parking')}</dt>
+                                    <dd>{__(':info_parking_1')}<a href='https://www.city.iyo.lg.jp/keizaikoyou/kanko/documents/rinji_chushajo.pdf' rel="noopener noreferrer" target='_blank' className='link'>{__(':info_parking_2')}</a></dd>
+                                    <dt>{__(':info_title_phone')}</dt>
+                                    <dd><a href="tel:{__(':info_phone')}">{__(':info_phone')}</a></dd>
                                 </dl>
                             </div>
                             <div className='section_content_twoCol_second map'>
@@ -165,7 +186,7 @@ export default function Home(){
                 </section>
                 <section className="section overview wrap" id='instagram'>
                     <h2 className='section_title'>INSTAGRAM</h2>
-                    <h2 className='section_title_jp'>インスタグラム</h2>
+                    <h2 className={`section_title_sub ${userLocale}`}>{__(':instagram_title')}</h2>
                     <div className='section_content instagram'>    
                         <Instagram />
                         <div className='section_content_icon'>
@@ -177,25 +198,29 @@ export default function Home(){
                 </section>
                 <section className="section overview wrap" id='contact'>
                     <h2 className='section_title'>CONTACT</h2>
-                    <h2 className='section_title_jp'>お問い合わせ</h2>
+                    <h2 className={`section_title_sub ${userLocale}`}>{__(':contact_title')}</h2>
                     <div className='section_content contact'>    
                         <ContactForm />
                     </div>
                 </section>
                 <section className="section overview wrap" id='about'>
                     <h2 className='section_title'>ABOUT US</h2>
-                    <h2 className='section_title_jp'>運営組織</h2>
+                    <h2 className={`section_title_sub ${userLocale}`}>{__(':about_title')}</h2>
                     <div className='section_content'>    
-                        <h3 className='section_content_title'>愛媛県伊予市<br />移住サポートセンター</h3>
+                        <h3 className='section_content_title'>
+                            {__(':about_second_title1')}
+                                <br />
+                            {__(':about_second_title2')}
+                            </h3>
                         <div className='section_content_twoCol'>
                             <div className='section_content_twoCol_first img'>
                                 <a href="https://iyorin.jp/" className='js-img-click' rel="noopener noreferrer" target='_blank'>
-                                    <span>クリックしてにゃ</span>
+                                    <span>{__(':about_msg')}</span>
                                     <img src={iyorin} alt='' />
                                   　
                                     <div className='img_desc'>
-                                        <p>「ともに暮らせるなかまを求めて」</p>
-                                        <p>いよりん</p>
+                                        <p>{__(':about_desc1')}</p>
+                                        <p>{__(':about_desc2')}</p>
                                     </div>
                                 </a>
                             </div>

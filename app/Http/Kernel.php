@@ -23,6 +23,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
 
+  
     /**
      * The application's route middleware groups.
      *
@@ -38,6 +39,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
+            \CodeZero\Localizer\Middleware\SetLocale::class,
         ],
 
         'api' => [
@@ -66,5 +68,11 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+    ];
+    protected $middlewarePriority = [
+        \Illuminate\Session\Middleware\StartSession::class, // <= after this
+        //...
+        \CodeZero\Localizer\Middleware\SetLocale::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class, // <= before this
     ];
 }

@@ -19,10 +19,10 @@ function Instagram(){
   const [posted, setPosted] = useState("");
   useEffect(()=>{
     const user_name = "shimonadashoten" 
-    const access_token = page.props.Instagram_access_token_KEY;
-    const user_id = page.props.Instagram_user_id_KEY;
+    const access_token = import.meta.env.VITE_APP_Instagram_access_token_KEY;
+    const user_id = import.meta.env.VITE_APP_Instagram_user_id_KEY;
     const get_count = 9 ;//取得したい投稿数
-
+    //console.log(user_id)
     axios
       .get(
         `https://graph.facebook.com/v16.0/${user_id}?fields=business_discovery.username(${user_name}){id,followers_count,media_count,ig_id,media.limit(${get_count}){caption,media_url,like_count}}&access_token=${access_token}`,
