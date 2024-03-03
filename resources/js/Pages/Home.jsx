@@ -14,9 +14,6 @@ import iyorin from '../../images/iyorin.png';
 import logo from '../../images/logo.png';
 import og from '../../images/og.webp';
 
-
-
-
 export default function Home(props){
     spMenuShow();
     countUpNumber();
@@ -25,27 +22,38 @@ export default function Home(props){
 
     const locales = ['ja', 'en', 'zh'];
     const handleChangeLocale = locale => {
-
         location.href = '?locale='+ locale;
-
     };
-    let userLocale = props.userLocale;
-    console.log(props)
-    const Test = ()=>{
+    let userLocale = props.locale.currentLocale?props.locale.currentLocale:props.userLocale;
+    
+    //console.log(userLocale)
+
+    const Load = ()=>{
         return(
-            <div className="p-5">
-
-
-            Language<br />
-            <select onChange={e => handleChangeLocale(e.target.value)}>
-                <option value=""></option>
-                {locales.map(locale => (
-                    <option key={locale} value={locale}>{locale}</option>
-                ))}
-            </select>
-        </div>
+            locales.map((locale,i)=>{
+                let selected = locale === userLocale ? "on":"";
+                let showedLocale;
+                switch(locale){
+                    case "ja":
+                        showedLocale="JPN"
+                        break;
+                    case "en":
+                        showedLocale="ENG"
+                        break;
+                    case "zh":
+                        showedLocale="CHN"
+                        break;
+                }
+                return(
+                    <li onClick={e => handleChangeLocale(e.target.id)} 
+                        key={locale} value={locale} className={`nav_lang_li ${selected}`} id={locale}>
+                            {showedLocale}
+                    </li>
+                )
+            })
         )
     }
+
 
     return(
         <>
@@ -64,23 +72,27 @@ export default function Home(props){
                     </div>
                 </div>
                 <nav className="nav js-nav">
-                    <ul className="nav_ul">
-                        <li className="nav_ul_li js-nav-ul-li">
-                        <a href='#overview'>OVERVIEW</a>
+                    <ul className="nav_menu">
+                        <li className="nav_menu_li js-nav-ul-li">
+                        <a href='#overview'>{__(':menu_list1')}</a>
                         </li>
-                        <li className="nav_ul_li js-nav-ul-li">
-                            <a href='#goods'>GOODS</a>
+                        <li className="nav_menu_li js-nav-ul-li">
+                            <a href='#goods'>{__(':menu_list2')}</a>
                         </li>
-                        <li className="nav_ul_li js-nav-ul-li">
-                            <a href='#shopinfo'>SHOP INFO</a>
+                        <li className="nav_menu_li js-nav-ul-li">
+                            <a href='#shopinfo'>{__(':menu_list3')}</a>
                         </li>
-                        <li className="nav_ul_li js-nav-ul-li">
-                            <a href='#contact'>CONTACT</a>
+                        <li className="nav_menu_li js-nav-ul-li">
+                            <a href='#contact'>{__(':menu_list4')}</a>
                         </li>
-                        <li className="nav_ul_li js-nav-ul-li">
-                            <a href='#about'>ABOUT US</a>
+                        <li className="nav_menu_li js-nav-ul-li">
+                            <a href='#about'>{__(':menu_list5')}</a>
                         </li>
                     </ul>
+                    <ul className="nav_lang" >
+                        <Load />  
+                    </ul>
+
 
                 </nav>
             </header>
@@ -159,7 +171,7 @@ export default function Home(props){
                     </div>
                 </section>
                 <section className="section details wrap" id='shopinfo'>
-                    <h2 className='section_title'>SHOP INFO</h2>
+                    <h2 className='section_title'>INFO</h2>
                     <h2 className={`section_title_sub ${userLocale}`}>{__(':info_title')}</h2>
                     <div className='section_content_oneCol'>
                         <div className='section_content_twoCol'>
@@ -204,7 +216,7 @@ export default function Home(props){
                     </div>
                 </section>
                 <section className="section overview wrap" id='about'>
-                    <h2 className='section_title'>ABOUT US</h2>
+                    <h2 className='section_title'>ABOUT</h2>
                     <h2 className={`section_title_sub ${userLocale}`}>{__(':about_title')}</h2>
                     <div className='section_content'>    
                         <h3 className='section_content_title'>
@@ -232,7 +244,7 @@ export default function Home(props){
                 </section>   
             </main>
             <footer className='footer'>
-                <p>&copy;下灘商店</p>
+                <p>&copy;{__(':title')}</p>
                 <div>
                             <a href="https://instagram.com/shimonadashoten" rel="noopener noreferrer" target='_blank'>
                                 <FaInstagram />

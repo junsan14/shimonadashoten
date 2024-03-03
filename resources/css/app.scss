@@ -45,7 +45,7 @@ $breakpoint: (
 	}
 }
 
-$background-color:linear-gradient(to bottom,rgba(0, 106, 182,.6),rgba(114, 145, 180,.1));
+$background-color:linear-gradient(to bottom,rgba(0, 106, 182,.8),rgba(114, 145, 180,.4));
 $border-color: rgba(#fff,.5);
 $focus-style: rgba(0, 106, 182,.6);
 $text-color: #505050;
@@ -337,9 +337,9 @@ img{
         transition: .5s ease;
         z-index: 0;
         margin-top: 0px;
+        text-align: center;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: center;
         height: 100%;
         &.show{
@@ -354,27 +354,24 @@ img{
             position: fixed;
         }
 
-        &_ul{
-            text-align: center;
-            padding-top:5vh;
+       &_menu{
+            width: 100%;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            height: 80%;
-            @include mq(sp){
-                padding-top: 0;
-            }
+            height: 60%;
+            margin-top: 80px;
             &_li{
                 width: 100%;
                 font-size: 1.5em;
                 @include mq(tab){
                     font-size: 1.8em;
-    
+
                 }
                 @include mq(sp){
                     font-size: 1.5em;
-             
+                
                 }
                 a{
                     transition: .5s ease;
@@ -384,37 +381,40 @@ img{
                     }
                 }
                 
-            }
-        }
-        &_sns{
+            } 
+       }
+       &_lang{
+            width: 20%;
             display: flex;
-            justify-content: center;
+            margin: 0 auto;
+            height: 20%;
+            justify-content: space-between;
             @include mq(tab){
-                font-size: .8em;
-            }
-            @include mq(sp){
-                font-size: 2.5em;
-            }
-            a{
                 width: 40%;
-                display: flex;
-                justify-content: center;
-                .nav_sns_icon{
+            }
+            &_li{
+                font-size: 1.5em;
+                transition: .5s ease;
+                &.on{
+                    display: none;
+                }
+                &:hover{
+                    opacity: .5;
+                    cursor: pointer;
                     transition: .5s ease;
-                    &:hover{
-                        color: $text-color;
-                        transition: .5s ease;
-                    }
+                }
+                @include mq(tab){
+                    font-size: 1.8em;
+    
+                }
+                @include mq(sp){
                     font-size: 1.5em;
-                    @include mq(tab){
-                        font-size: 3.5em;
-                    }
-                    @include mq(sp){
-                        font-size: 1.5em;
-                    }
+            
                 }
             }
-        }
+       }
+        
+        
     
     }
 }
@@ -571,6 +571,7 @@ img{
     &_title{
         font-size: 3em;
         letter-spacing: .3em;
+        text-indent: .3em;
         margin-top: 20vh;
         text-align: center;
         @include mq(tab){
@@ -583,6 +584,7 @@ img{
             font-size: 1.4em;
             text-align: center;
             letter-spacing: .4em;
+            text-indent: .4em;
             opacity: .5;
             margin-bottom: 5vh;
             
@@ -590,6 +592,7 @@ img{
     }
     .en{
         letter-spacing: 0;
+        text-indent: 0;
     }
     &_content_title{
         text-align: center;
@@ -715,7 +718,7 @@ img{
             display: flex;
             margin-bottom: 100px;
             justify-content: space-between;
-            align-items: center;
+            align-items: end;
             
             @include mq(sp){
                 flex-direction: column;
@@ -816,10 +819,12 @@ img{
                 dt{
                     width: 30vw;
                     font-size: 1.2em;
-                    text-decoration: underline;
+                    padding: 0.1em 0.5em;/*上下 左右の余白*/
+                    background: transparent;/*背景透明に*/
+                    border-left: solid 1px #fff;/*左線*/
                     @include mq(sp){
                         width: 100%;
-                        text-align: center;
+
                     }
                 }
                 dd{
@@ -829,9 +834,7 @@ img{
                     
                     @include mq(sp){
                         width: 100%;
-                        text-align: center;
-                        margin-left: 0px;
-                        font-size: 1em;
+                        font-size: 1.1em;
                     }
                 }
             }

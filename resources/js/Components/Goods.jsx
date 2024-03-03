@@ -10,6 +10,7 @@ import 'swiper/css';
 import beni from '../../images/goods/drink_madonna.webp';
 import iyokan from '../../images/goods/drink_iyokan.webp';
 import kanpei from '../../images/goods/drink_kanpei.webp';
+import kuripai from '../../images/goods/okashi_kuripai.webp';
 
 
 
@@ -51,7 +52,7 @@ function GoodsDrink(){
                         <img src={iyokan} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='0' />
                     </div>
                     <figcaption className="post_desc_caption" >
-                        双海の伊予柑ジュース（小瓶）
+                        {__(':goods_1_1')}
                     </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
@@ -59,7 +60,7 @@ function GoodsDrink(){
                         <img src={beni} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='1' />
                     </div>
                     <figcaption className="post_desc_caption" >
-                        双海のマドンナジュース（小瓶）
+                        {__(':goods_1_2')}
                     </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
@@ -67,7 +68,15 @@ function GoodsDrink(){
                         <img src={kanpei} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='2' />
                     </div>
                     <figcaption className="post_desc_caption" >
-                        双海の甘平ジュース（小瓶）
+                        {__(':goods_1_3')}
+                    </figcaption>  
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='section_content_swiper_item js-show-modal js-modal-goods-drink' key='3' data-index='3'>
+                        <img src={kuripai} alt="" className='js-modal-img js-modal-goods-drink-img' data-index='3' />
+                    </div>
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_1_4')}
                     </figcaption>  
                 </SwiperSlide>
             </Swiper>
@@ -91,19 +100,25 @@ function GoodsShimonadaJR(){
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shimondajr' key='0' data-index='0'>
                         <img src={totobag} alt="" className='js-modal-img js-modal-goods-shimonadajr-img' data-index='0' />
                     </div>
-                    <figcaption className="post_desc_caption" >しもなだえきちゃん トートバック </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_2_1')}
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shimondajr' key='1' data-index='1'>
                         <img src={plate} alt="" className='js-modal-img js-modal-goods-shimonadajr-img' data-index='1' />
                     </div>
-                    <figcaption className="post_desc_caption" >下灘駅 木製プレート </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_2_2')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shimondajr' key='2' data-index='2'>
                         <img src={clearfile} alt="" className='js-modal-img js-modal-goods-shimonadajr-img' data-index='2' />
                     </div>
-                    <figcaption className="post_desc_caption" >下灘駅 クリアファイル </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_2_3')} 
+                     </figcaption>  
                 </SwiperSlide>
             </Swiper>
         </>
@@ -125,49 +140,65 @@ function GoodsShikokuJR(){
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='0' data-index='0'>
                         <img src={keychain} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='0' />
                     </div>
-                    <figcaption className="post_desc_caption" >ボールチェーンキーホルダー（れっちゃくん/えひめれっちゃくん）</figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_3_1')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='1' data-index='1'>
                         <img src={maskingtape} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='1' />
                     </div>
-                    <figcaption className="post_desc_caption" >マスキングテープ（えきちゃん/8600系）</figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_3_2')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='2' data-index='2'>
                         <img src={passcase} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='2' />
                     </div>
-                    <figcaption className="post_desc_caption" >　すまいるえきちゃん パスケース </figcaption>  
+                    <figcaption className="post_desc_caption" >　
+                        {__(':goods_3_3')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='3' data-index='3'>
                         <img src={maskcase} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='3' />
                     </div>
-                    <figcaption className="post_desc_caption" >すまいるえきちゃん マスクケース </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_3_4')}  
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='4' data-index='4'>
                         <img src={figures01} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='4' />
                     </div>
-                    <figcaption className="post_desc_caption" >すまいるえきちゃんれっちゃくん フィギュア </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_3_5')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='5' data-index='5'>
                         <img src={figures02} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='5' />
                     </div>
-                    <figcaption className="post_desc_caption" >れっちゃくんず♡ フィギュア(４体セット) </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_3_6')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='6' data-index='6'>
                         <img src={towel02} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='6' />
                     </div>
-                    <figcaption className="post_desc_caption" >ＪＲ四国　マフラータオル </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_3_7')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujr' key='7' data-index='7'>
                         <img src={blanket} alt="" className='js-modal-img js-modal-goods-shikokujr-img' data-index='7' />
                     </div>
-                    <figcaption className="post_desc_caption" >すまいるえきちゃん　ブランケット </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_3_8')} 
+                    </figcaption>  
                 </SwiperSlide>
             </Swiper>
         </>
@@ -189,19 +220,25 @@ function GoodsShikokuJRCampaign(){
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujrcampaign' key='0' data-index='0'>
                         <img src={fan} alt="" className='js-modal-img js-modal-goods-shikokujrcampaign-img' data-index='0' />
                     </div>
-                    <figcaption className="post_desc_caption" >すまいるえきちゃん♡７周年グッズ うちわ </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_4_1')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujrcampaign' key='1' data-index='1'>
                         <img src={towel} alt="" className='js-modal-img js-modal-goods-shikokujrcampaign-img' data-index='1' />
                     </div>
-                    <figcaption className="post_desc_caption" >すまいるえきちゃん♡７周年グッズ　タオルハンカチ </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_4_2')} 
+                    </figcaption>  
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='section_content_swiper_item js-show-modal js-modal-goods-shikokujrcampaign' key='2' data-index='2'>
                         <img src={sticker} alt="" className='js-modal-img js-modal-goods-shikokujrcampaign-img' data-index='2' />
                     </div>
-                    <figcaption className="post_desc_caption" >すまいるえきちゃん♡７周年グッズ　ステッカー </figcaption>  
+                    <figcaption className="post_desc_caption" >
+                        {__(':goods_4_3')} 
+                    </figcaption>  
                 </SwiperSlide>
             </Swiper>
         </>

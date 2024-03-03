@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\HomeController;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -17,11 +18,8 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    //dd(App::getLocale());
-    return Inertia::render('Home',['userLocale'=>App::getLocale()]);
-})->name('home');
+//dd(App::getLocale());
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/', [MailController::class, 'send'])->name('contact.send');
 
 
