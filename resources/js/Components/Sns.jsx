@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import { usePage } from '@inertiajs/react';
-import {ShowModal} from '@/script';
+import {ShowModal} from '@/Script';
 import {AiFillHeart} from 'react-icons/ai';
 import { useMemo } from "react";
 import $ from 'jquery';

@@ -1,7 +1,7 @@
 import './bootstrap';
 import '../css/app.scss';
 import '../css/reset.css';
-import './script';
+import './Script';
 
 
 
@@ -21,7 +21,7 @@ createInertiaApp({
             locale = userLocale;
             
             let translatedText = localeData[locale][key] || key;
-            console.log(locale)
+            //console.log(locale)
             for(let key in replace) {
 
                 const replacingValue = replace[key];

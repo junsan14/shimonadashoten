@@ -7,14 +7,20 @@ import React, { useState, useEffect } from 'react'
 import { usePage } from '@inertiajs/react';
 import {FaInstagram} from 'react-icons/fa6';
 
-import {spMenuShow,countUpNumber,onScrollOverray,ShowModal,imgClick} from '../script';
+import {spMenuShow,countUpNumber,onScrollOverray,ShowModal,imgClick} from '../Script';
 import kv from '../../images/kv.jpg';
 import kv_sp from '../../images/kv_sp.jpg';
 import iyorin from '../../images/iyorin.png';
 import logo from '../../images/logo.png';
 import og from '../../images/og.webp';
+import $ from "jquery";
+import { router } from '@inertiajs/react'
 
 export default function Home(props){
+    console.log(router)
+    router.on('start', (event) => {
+        console.log(event)
+      })
     spMenuShow();
     countUpNumber();
     onScrollOverray();
@@ -27,6 +33,8 @@ export default function Home(props){
     let userLocale = props.locale.currentLocale?props.locale.currentLocale:props.userLocale;
     
     //console.log(userLocale)
+
+    
 
     const Load = ()=>{
         return(

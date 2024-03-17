@@ -3,42 +3,36 @@ import React,{useState,useEffect, Component } from "react";
 import transparentImg from '../images/transparent.png';
 
 
-
 function spMenuShow(){
     const [loadState, setLoadState]= useState(false);
-    //console.log(loadState)
-    $(function(){
+    useEffect(()=>{
+      const $nav = $('.js-nav');
+      const $toggleBtn = $('.js-toggle-sp');
+      const $naviList = $('.js-nav-ul-li');
       if(!loadState){
-     
-        let $nav = $('.js-nav');
-        let $toggleBtn = $('.js-toggle-sp');
-        let $naviList = $('.js-nav-ul-li');
-
-          $toggleBtn.on('click', ()=>{       
-            if($nav.hasClass('show')){
-              $nav.removeClass('show');
-              $toggleBtn.removeClass('show');
-              $("body").removeClass('noscroll');
-              //console.log($header.hasClass('show'))
-            }else{
-              $nav.addClass('show');
-              $toggleBtn.addClass('show');
-              $("body").addClass('noscroll');
-              //console.log($header.hasClass('show'))
-            }
-      
-          })
-          $naviList.on('click',()=>{
+        $toggleBtn.on('click', ()=>{      
+          if($nav.hasClass('show')){
             $nav.removeClass('show');
             $toggleBtn.removeClass('show');
             $("body").removeClass('noscroll');
-          })
-          setLoadState(true);
+            //console.log("show remove" +loadState) 
+            //console.log($header.hasClass('show'))
+          }else{  
+            $nav.addClass('show');
+            $toggleBtn.addClass('show');
+            $("body").addClass('noscroll');
+          }
+        })
+        $naviList.on('click',()=>{
+          $nav.removeClass('show');
+          $toggleBtn.removeClass('show');
+          $("body").removeClass('noscroll');
+        })
+        setLoadState(true);
       }
-  
-  
-  
-    })
+    },[loadState])    
+    
+    
 }
 
 function imgClick(){
@@ -122,7 +116,7 @@ function ShowModal(props){
     let $showModal = $(".js-show-modal");
 
     $showModal.on("click", function(){
-    
+      //console.log('a')
       if($(this).hasClass('js-modal-instagram')){
         $showModal = $(".js-modal-instagram");
       }else if($(this).hasClass('js-modal-goods-drink')){
